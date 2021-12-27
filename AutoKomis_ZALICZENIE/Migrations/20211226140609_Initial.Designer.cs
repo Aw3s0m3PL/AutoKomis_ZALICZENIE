@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AutoKomis_ZALICZENIE.Migrations
 {
     [DbContext(typeof(KomisContext))]
-    [Migration("20211225142720_Initial")]
+    [Migration("20211226140609_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,17 +30,20 @@ namespace AutoKomis_ZALICZENIE.Migrations
                     b.Property<double>("Cena")
                         .HasColumnType("float");
 
-                    b.Property<string>("Kategoria")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Kategoria")
+                        .HasColumnType("int");
 
                     b.Property<string>("Marka")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Model")
-                        .HasColumnType("int");
+                    b.Property<string>("Model")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Opis")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PojSil")
+                        .HasColumnType("int");
 
                     b.Property<long>("Przebieg")
                         .HasColumnType("bigint");

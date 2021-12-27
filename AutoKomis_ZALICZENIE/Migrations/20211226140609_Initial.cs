@@ -6,24 +6,24 @@ namespace AutoKomis_ZALICZENIE.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-           
             migrationBuilder.CreateTable(
                 name: "Pojazdy",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TytOglo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TypNadwozia = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Marka = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Model = table.Column<int>(type: "int", nullable: false),
+                    TytOglo = table.Column<string>(type: "varchar(100)", nullable: false),
+                    TypNadwozia = table.Column<string>(type: "varchar(20)", nullable: false),
+                    Marka = table.Column<string>(type: "varchar(20)", nullable: false),
+                    Model = table.Column<string>(type: "varchar(30)", nullable: false),
                     Cena = table.Column<double>(type: "float", nullable: false),
                     RokProd = table.Column<int>(type: "int", nullable: false),
-                    RodzPaliwa = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RodzPaliwa = table.Column<string>(type: "varchar(20)", nullable: false),
                     Przebieg = table.Column<long>(type: "bigint", nullable: false),
-                    Kategoria = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Opis = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Zdjecie = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    PojSil = table.Column<int>(type: "bigint", nullable: false),
+                    Kategoria = table.Column<int>(type: "int", nullable: false),
+                    Opis = table.Column<string>(type: "varchar(max)", nullable: false),
+                    Zdjecie = table.Column<string>(type: "varchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
