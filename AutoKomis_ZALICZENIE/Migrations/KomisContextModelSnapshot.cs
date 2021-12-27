@@ -28,17 +28,20 @@ namespace AutoKomis_ZALICZENIE.Migrations
                     b.Property<double>("Cena")
                         .HasColumnType("float");
 
-                    b.Property<string>("Kategoria")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Kategoria")
+                        .HasColumnType("int");
 
                     b.Property<string>("Marka")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Model")
-                        .HasColumnType("int");
+                    b.Property<string>("Model")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Opis")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PojSil")
+                        .HasColumnType("int");
 
                     b.Property<long>("Przebieg")
                         .HasColumnType("bigint");

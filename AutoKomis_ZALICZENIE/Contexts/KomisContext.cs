@@ -9,7 +9,8 @@ namespace AutoKomis_ZALICZENIE.Contexts
 {
     public class KomisContext : DbContext
     {
-        public DbSet<KomisModel> Pojazdy { get; set; } 
+        public DbSet<KomisModel> Pojazdy { get; set; }
+        public DbSet<AdminModel> AdminData { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptions)
         {

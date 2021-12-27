@@ -1,0 +1,111 @@
+﻿@model AutoKomis_ZALICZENIE.Models.KomisModel
+
+@{
+    ViewData["Title"] = Html.DisplayFor(model => model.TytOglo);
+}
+
+<style>
+.ogloszenie {
+
+}
+
+.ogloszenie img {
+    width: 50%;
+    height:50%;
+}
+
+.bottom {
+    position: relative;
+    bottom: inherit;
+    width: 100px;
+    height: 100px;
+    padding-top: 10px;
+}
+
+.bottom a{
+    font-size: 30px;
+    color: gray;
+    margin-left: 10px;
+}
+
+.opis {
+    padding-top: 50px;
+}
+
+.szczegoly {
+    width: 300px;
+}
+</style>
+
+<h1>@Html.DisplayFor(model => model.TytOglo)</h1>
+<h2> 
+@{
+    double cena = double.Parse(Html.ValueFor(model => model.Cena));
+    string c = string.Format("{0:n}", @cena);
+    @c
+}
+ PLN
+</h2>
+
+<div class="ogloszenie">
+ <table>
+<tr>
+    <td>
+        <img src="@Html.DisplayFor(model => model.Zdjecie)"/>
+    </td>
+    <td>
+        <h4>Szczegóły</h4>
+        <table class="szczegoly">
+            <tr>
+                <td>Kategoria</td>
+                <td>
+                    @{
+                        int k = Int32.Parse(Html.ValueFor(model => model.Kategoria));
+                        string kat;
+                        if (k == 1)
+                        {
+                            kat = "Dostawcze/Ciężarowe";
+                            @kat
+                        }
+                        else if (k == 2)
+                        {
+                            kat = "Motocykle/Quady";
+                            @kat
+                        }
+                        else if (k == 3)
+                        {
+                            kat = "Osobowe";
+                            @kat
+                        }
+                        else
+                        {
+                            kat = "Inne";
+                            @kat
+                        }
+                    }
+                </td>
+            </tr>
+            <tr><td>Marka pojazdu</td><td>@Html.DisplayFor(model => model.Marka)</td></tr>
+            <tr><td>Model pojazdu</td><td>@Html.DisplayFor(model => model.Model)</td></tr>
+            <tr><td>Rok produkcji</td><td>@Html.DisplayFor(model => model.RokProd)</td></tr>
+            <tr><td>Przebieg</td><td>@Html.DisplayFor(model => model.Przebieg) km</td></tr>
+            <tr><td>Pojemność skokowa</td><td>@Html.DisplayFor(model => model.PojSil) cm<sup>3</sup></td></tr>
+            <tr><td>Rodzaj paliwa</td><td>@Html.DisplayFor(model => model.RodzPaliwa)</td></tr>
+            <tr><td>Typ nadwozia</td><td>@Html.DisplayFor(model => model.TypNadwozia)</td></tr>
+        </table>
+    </td>
+</tr>
+ </table>
+</div>
+<div class="opis">
+<h4>Opis</h4>
+@Html.DisplayFor(model => model.Opis)
+</div>
+<div class="bottom">
+<table>
+<tr>
+  <td><a asp-action="Index"><i class="fas fa-angle-double-left"></i></a></td>
+  <td><a asp-action="Edit" asp-route-id="@Model.ID"><i class="far fa-edit"></i></a></td>
+</tr>
+</table>
+</div>

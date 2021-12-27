@@ -11,12 +11,13 @@ namespace AutoKomis_ZALICZENIE.Models
         public string TytOglo { get; set; }
         public string TypNadwozia { get; set; }
         public string Marka { get; set; }
-        public int Model { get; set; }
+        public string Model { get; set; }
         public double Cena { get; set; }
         public int RokProd { get; set; }
         public string RodzPaliwa { get; set; }
         public long Przebieg { get; set; }
-        public string Kategoria { get; set; }
+        public long PojSil { get; set; }
+        public int Kategoria { get; set; }
         public string Opis { get; set; }
         public string Zdjecie{ get; set; }
     }

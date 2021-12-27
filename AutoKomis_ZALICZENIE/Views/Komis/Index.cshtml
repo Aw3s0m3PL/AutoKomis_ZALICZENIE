@@ -1,6 +1,113 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model IEnumerable<AutoKomis_ZALICZENIE.Models.KomisModel>
+
 @{
+    ViewData["Title"] = "Index";
 }
+
+<style>
+    .table {
+        margin: 0;
+        width: 100%;
+    }
+
+    .fot {
+       width: 500px;
+       height: 250px;
+       margin: 0;
+    }
+
+    img {
+        width: 500px;
+        height: 250px;
+    }
+
+   .title a{
+        color: black;
+    }
+
+    .title a:hover {
+        color: white;
+        background-color: gray;
+        text-decoration: none;
+    }
+
+    .info ul {
+        margin-left: 12px;
+        padding-left: 12px;
+    }
+
+    .info h4 {
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .admctl a {
+        font-size: 20px;
+        color: gray;
+    }
+
+    .admctl ol {
+        list-style-type: none;
+        text-align: right;
+    }
+
+    .admctl li {
+        margin-bottom: 10px;
+    }
+
+</style>
+
 <h1>Strona internetowego komisu samochodowego.</h1>
+<br />
+
+<p>
+<a asp-action="Add" class="styleButton">Dodaj ogłoszenie</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <h1>Indeks ogłoszeń:</h1>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="fot">
+                <img src="@Html.DisplayFor(modelItem => item.Zdjecie)"/>
+                </td>
+                <td>
+                    <div class="title"><h3><a asp-action="Details" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.TytOglo)</a></h3></div>
+                    <div class="info">
+                    <ul>
+                    <li>@Html.DisplayFor(modelItem => item.RokProd)</li>
+                    <li>@Html.DisplayFor(modelItem => item.Przebieg) km</li>
+                    <li>@Html.DisplayFor(modelItem => item.PojSil) cm<sup>3</sup></li>
+                    <li>@Html.DisplayFor(modelItem => item.RodzPaliwa)</li>
+                    </ul>
+                    <h4>
+                        @{
+                            double cena = item.Cena;
+                            string c = string.Format("{0:n}", @cena);
+                            @c
+                        }
+                         PLN
+                    </h4>
+                    </div>
+                </td>
+                <td>
+                    <div class="admctl">
+                    <ol>
+                    <li><a asp-action="Edit" asp-route-id="@item.ID"><i class="far fa-edit"></i></a></li>
+                    <li><a asp-action="Remove"  asp-route-id="@item.ID"><i class="fas fa-trash"></i></a></li>
+                    </ol>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
