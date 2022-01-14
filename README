@@ -21,4 +21,4 @@ czy formularze.
 
 Dekorator – wzorzec projektowy należący do grupy wzorców strukturalnych. Pozwala na dodanie nowej funkcji do istniejących klas dynamicznie podczas działania programu.
 Pozwala on na rozszerzenie funkcjonalności naszej aplikacji bez konieczności modyfikacji istniejącego kodu. Na przykład mając klasę Upload, która domyślnie pozwala na 
-przesłanie na serwer pliku w formacie .txt możemy orzy użyciu dekoratora dostosować ją do obsługi formatu .png. 
+przesłanie na serwer pliku w formacie .txt możemy orzy użyciu dekoratora dostosować ją do obsługi formatu .png.
