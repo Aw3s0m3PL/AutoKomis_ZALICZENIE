@@ -5,13 +5,20 @@ Interfejs umożliwia dodanie nowych ogłoszeń oraz edycję i usunięcie już is
 Po kliknięciu w tytuł ogłoszenia zostaniemy przeniesieni do strony z rozszerzonymi informacjami o danym pojeździe.
 
 Kompozyt – strukturalny wzorzec projektowy, którego celem jest składanie obiektów w taki sposób, aby klient widział wiele z nich jako pojedynczy obiekt.
+Można go użyć np. aby umożliwić zaznaczenie w aplikacji kilku elementów i przeciągnięcie ich na ekranie jako jeden.
 
 Obserwator – wzorzec projektowy należący do grupy wzorców czynnościowych. Używany jest do powiadamiania zainteresowanych obiekty o zmianie stanu pewnego innego obiektu.
+Obserwatora możemy użyć np. aby zaprogramować obiekty dziedzinowe w taki sposób, aby kiedy się zmienią, generowały powiadomienia, które interfejs użytkownika może subskrybować 
+i aktualizować wizualne kontrolki.
 
 Strategia – czynnościowy wzorzec projektowy, który definiuje rodzinę wymiennych algorytmów i kapsułkuje je w postaci klas. Umożliwia wymienne stosowanie każdego z nich w 
-trakcie działania aplikacji niezależnie od korzystających z nich użytkowników.
+trakcie działania aplikacji niezależnie od korzystających z nich użytkowników. Strategia jest przydatna np.  w celu pobrania tablicy lub wektora kilku łańcuchów znaków i wyświetlenie
+ich w postaci listy (używając znaczników języka html).
 
 Metoda wytwórcza (ang. factory method) – kreacyjny wzorzec projektowy, którego celem jest dostarczenie interfejsu do tworzenia obiektów nieokreślonych jako powiązanych typów.
-Tworzeniem egzemplarzy zajmują się podklasy.
+Tworzeniem egzemplarzy zajmują się podklasy. Można go wykorzystać w celu uzuskania konfigurowalnego sposobu tworzenia obietków lub nawet rodzin obiektów takich jak pola tekstowe 
+czy formularze.
 
 Dekorator – wzorzec projektowy należący do grupy wzorców strukturalnych. Pozwala na dodanie nowej funkcji do istniejących klas dynamicznie podczas działania programu.
+Pozwala on na rozszerzenie funkcjonalności naszej aplikacji bez konieczności modyfikacji istniejącego kodu. Na przykład mając klasę Upload, która domyślnie pozwala na 
+przesłanie na serwer pliku w formacie .txt możemy orzy użyciu dekoratora dostosować ją do obsługi formatu .png. 
