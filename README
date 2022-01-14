@@ -1,0 +1,17 @@
+Projekt zaliczeniowy z przedmiotu JIPP semestr V.
+Moja aplikacja jest stroną internetową dla komisu samochodowego.
+Jej przeznaczeniem jest wyświetlanie listy ogłoszeń sprzedaży pojazdów.
+Interfejs umożliwia dodanie nowych ogłoszeń oraz edycję i usunięcie już istniejących.
+Po kliknięciu w tytuł ogłoszenia zostaniemy przeniesieni do strony z rozszerzonymi informacjami o danym pojeździe.
+
+Kompozyt – strukturalny wzorzec projektowy, którego celem jest składanie obiektów w taki sposób, aby klient widział wiele z nich jako pojedynczy obiekt.
+
+Obserwator – wzorzec projektowy należący do grupy wzorców czynnościowych. Używany jest do powiadamiania zainteresowanych obiekty o zmianie stanu pewnego innego obiektu.
+
+Strategia – czynnościowy wzorzec projektowy, który definiuje rodzinę wymiennych algorytmów i kapsułkuje je w postaci klas. Umożliwia wymienne stosowanie każdego z nich w 
+trakcie działania aplikacji niezależnie od korzystających z nich użytkowników.
+
+Metoda wytwórcza (ang. factory method) – kreacyjny wzorzec projektowy, którego celem jest dostarczenie interfejsu do tworzenia obiektów nieokreślonych jako powiązanych typów.
+Tworzeniem egzemplarzy zajmują się podklasy.
+
+Dekorator – wzorzec projektowy należący do grupy wzorców strukturalnych. Pozwala na dodanie nowej funkcji do istniejących klas dynamicznie podczas działania programu.
